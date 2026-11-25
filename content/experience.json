@@ -1,0 +1,48 @@
+{
+  "subtitle": "What I’m up to now, and where I’ve been lately.",
+  "entries": [
+    {
+      "label": "Education",
+      "title": "University of British Columbia",
+      "detail": "Faculty of Arts [[(Interested in Cognitive Systems & Commerce)]], first-year student",
+      "date": "2026 — present"
+    },
+    {
+      "label": "Role",
+      "title": "Vice President Graphic Design & Social Media",
+      "detail": "UBC Vietnamese Student Association",
+      "date": "Sep 2026 — present"
+    },
+    {
+      "label": "Role",
+      "title": "Freelance Photographer",
+      "detail": "Founder & operator, freelance photography business, Victoria, B.C.",
+      "date": "Sep 2024 — present"
+    },
+    {
+      "label": "Role",
+      "title": "Private English Tutor",
+      "detail": "Cambridge exam prep and debate coaching, Kaohsiung, Taiwan",
+      "date": "Jun 2025 — present"
+    }
+  ],
+  "skills_label": "Software & skills",
+  "skills": [
+    "Adobe Photoshop",
+    "Adobe Premiere Pro",
+    "Adobe InDesign",
+    "Canva",
+    "DaVinci Resolve",
+    "TouchDesigner",
+    "Excel",
+    "Python",
+    "Photography",
+    "Videography",
+    "Social media content",
+    "Public speaking",
+    "Google AI Essentials",
+    "English (native)",
+    "Mandarin (native)",
+    "French (professional)"
+  ]
+}

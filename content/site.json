@@ -1,0 +1,18 @@
+{
+  "title": "Fiona Huang's Portfolio",
+  "description": "Fiona Huang's digital portfolio: design, photography and creative work.",
+  "share": {
+    "title": "Fiona Huang's Portfolio",
+    "description": "Design, photography and creative work by Fiona Huang.",
+    "image": "/assets/images/share-preview.jpg",
+    "url": "https://fionahuang.netlify.app/"
+  },
+  "now_playing": {
+    "label": "what am I listening to?",
+    "song": "Nice to Each Other",
+    "artist": "Olivia Dean",
+    "link": "https://open.spotify.com/track/7gKxCvTDWwV9wBhdeBbr3l"
+  },
+  "footer_home": "© 2026, Fiona Huang",
+  "footer_main": "Fiona Huang / Digital Portfolio"
+}

@@ -1,0 +1,345 @@
+# Pages CMS settings for Fiona's portfolio  (https://app.pagescms.org -> sign in with GitHub -> fiohuang-portfolio)
+# Each item under "content" is a page of the editor. Saving commits the change to GitHub and Netlify republishes the site (about a minute).
+
+media:
+  - name: images
+    label: 'Photos'
+    input: assets/images
+    output: /assets/images
+    extensions: [jpg, jpeg, png, webp, gif]
+    rename: safe
+  - name: video
+    label: 'Videos'
+    input: assets/video
+    output: /assets/video
+    extensions: [mp4]
+    rename: safe
+  - name: downloads
+    label: 'Downloadable files'
+    input: assets/downloads
+    output: /assets/downloads
+    rename: safe
+  - name: resume
+    label: 'Résumé (PDF)'
+    input: assets
+    output: /assets
+    extensions: [pdf]
+    rename: safe
+
+content:
+  - name: home
+    label: 'Home page'
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - name: status
+        label: 'Little badge above the intro'
+        type: string
+        description: 'The small pill, e.g. "Open to summer 2027 internships".'
+      - name: intro
+        label: 'Intro sentence'
+        type: text
+        description: 'The short line about you under the big "I''m Fiona!".'
+      - name: interests
+        label: 'Words in "I''m interested in . . ."'
+        type: string
+        list: true
+        description: 'These slide past one at a time on the home page. Use the arrows to reorder, the + to add one, the bin to remove one.'
+      - name: button
+        label: 'Button text'
+        type: string
+        description: 'The button under the intro. It goes to "my works".'
+
+  - name: about
+    label: 'About me page'
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - name: text
+        label: 'About me paragraph'
+        type: text
+      - name: portrait
+        label: 'Tall photo (portrait)'
+        type: object
+        description: 'The upright photo frame. Best around 900 × 1200 px.'
+        fields:
+          - name: image
+            label: 'Photo'
+            type: image
+            options: { media: images }
+          - name: alt
+            label: 'Photo description'
+            type: string
+            description: 'Describes the photo for people using a screen reader. One short sentence.'
+          - name: caption
+            label: 'Caption under the photo'
+            type: string
+      - name: landscape
+        label: 'Wide photo (landscape)'
+        type: object
+        description: 'The wide photo frame. Best around 1200 × 900 px.'
+        fields:
+          - name: image
+            label: 'Photo'
+            type: image
+            options: { media: images }
+          - name: alt
+            label: 'Photo description'
+            type: string
+            description: 'Describes the photo for people using a screen reader. One short sentence.'
+          - name: caption
+            label: 'Caption under the photo'
+            type: string
+      - name: facts
+        label: 'Quick facts'
+        type: object
+        list: true
+        description: 'The little rows on the right ("Studying", "Based in", ...). Add, remove or reorder them.'
+        fields:
+          - name: label
+            label: 'Small label'
+            type: string
+            description: 'e.g. Studying, Based in, Into'
+          - name: title
+            label: 'Main line'
+            type: string
+          - name: detail
+            label: 'Smaller line under it'
+            type: string
+
+  - name: experience
+    label: 'Experience page'
+    type: file
+    path: content/experience.json
+    format: json
+    fields:
+      - name: subtitle
+        label: 'Line under the page title'
+        type: string
+      - name: entries
+        label: 'Education & roles'
+        type: object
+        list: true
+        description: 'Each row on the page. Add a new one, remove one, or drag them into a new order.'
+        fields:
+          - name: label
+            label: 'Small label'
+            type: string
+            description: 'e.g. Education or Role'
+          - name: title
+            label: 'Main line'
+            type: string
+            description: 'e.g. the role or school name.'
+          - name: detail
+            label: 'Smaller line'
+            type: string
+            description: 'Organisation, place, etc. To show part of it in smaller grey text, put it inside double square brackets, like [[(this part)]].'
+          - name: date
+            label: 'Dates'
+            type: string
+            description: 'e.g. Sep 2026 — present'
+      - name: skills_label
+        label: 'Heading above the scrolling skills strip'
+        type: string
+      - name: skills
+        label: 'Software & skills'
+        type: string
+        list: true
+        description: 'The pills that scroll across the bottom of the page.'
+
+  - name: works
+    label: 'My works page'
+    type: file
+    path: content/works.json
+    format: json
+    fields:
+      - name: subtitle
+        label: 'Line under the page title'
+        type: string
+      - name: hint
+        label: 'Small note under the project list'
+        type: string
+      - name: projects
+        label: 'Projects'
+        type: object
+        list: true
+        description: 'Each project on the page, in order. The first one opens by default. Add a project, remove one, or reorder them.'
+        fields:
+          - name: id
+            label: 'Web-address name'
+            type: string
+            required: true
+            pattern:
+              regex: '^[a-z0-9-]+$'
+              message: 'Use only lowercase letters, numbers and dashes, no spaces.'
+            description: 'Short name used in the project''s link (fionahuang.netlify.app/#works/this-name). Lowercase letters, numbers and dashes only. Avoid changing it later, because old links would stop working.'
+          - name: name
+            label: 'Project name'
+            type: string
+            required: true
+          - name: category
+            label: 'Short category (shown in the list)'
+            type: string
+          - name: thumb
+            label: 'Small picture for the list'
+            type: image
+            options: { media: images, path: assets/images/works }
+            description: 'A square picture, about 240 × 240 px.'
+          - name: thumb_alt
+            label: 'Small picture description'
+            type: string
+            description: 'Describes the picture for screen readers.'
+          - name: meta
+            label: 'Small line above the title'
+            type: string
+            description: 'e.g. your role, where, and when.'
+          - name: description
+            label: 'Description'
+            type: text
+          - name: tags
+            label: 'Tags line'
+            type: string
+            description: 'e.g. Social media · Graphic design · Brand identity'
+          - name: button_label
+            label: 'Button text (optional)'
+            type: string
+            description: 'Leave empty for no button. Then fill in EITHER a web link OR a file below.'
+          - name: button_link
+            label: 'Button goes to this web link'
+            type: string
+            description: 'A full web address starting with https://'
+          - name: button_file
+            label: 'Button downloads this file instead'
+            type: file
+            options: { media: downloads }
+            description: 'If a file is chosen, the button downloads it (and the web link above is ignored).'
+          - name: images
+            label: 'Photos / designs (a sideways gallery)'
+            type: object
+            list: true
+            description: 'For a gallery project. Add, remove and reorder pictures. Leave empty if the project is a video.'
+            fields:
+              - name: image
+                label: 'Picture'
+                type: image
+                options: { media: images, path: assets/images/works }
+                description: 'Keep each under about 250 KB (about 1400 px on the long side) so the site stays fast.'
+              - name: alt
+                label: 'Picture description'
+                type: string
+                description: 'Describes the picture for screen readers.'
+              - name: square
+                label: 'This picture is square'
+                type: boolean
+                description: 'Turns on a thin outline, used for square pictures such as logos.'
+          - name: video
+            label: 'Video (optional)'
+            type: file
+            options: { media: video }
+            description: 'Choose an .mp4 to make this a video project instead of a gallery.'
+          - name: poster
+            label: 'Video cover picture'
+            type: image
+            options: { media: images, path: assets/images/works }
+          - name: video_alt
+            label: 'Video description'
+            type: string
+            description: 'Describes the video for screen readers.'
+
+  - name: contact
+    label: 'Contact page & links'
+    type: file
+    path: content/contact.json
+    format: json
+    fields:
+      - name: line
+        label: 'Friendly line'
+        type: text
+      - name: pill
+        label: 'Badge text'
+        type: string
+      - name: email
+        label: 'Email address'
+        type: string
+        description: 'Also used by the little email icon on the home page.'
+      - name: linkedin_url
+        label: 'LinkedIn link'
+        type: string
+        description: 'The full address, starting with https://'
+      - name: linkedin_text
+        label: 'LinkedIn text shown on the page'
+        type: string
+      - name: instagram_url
+        label: 'Instagram link'
+        type: string
+        description: 'The full address, starting with https://'
+      - name: instagram_text
+        label: 'Instagram text shown on the page'
+        type: string
+        description: 'e.g. @ficnahuang'
+      - name: resume_file
+        label: 'Résumé (PDF)'
+        type: file
+        options: { media: resume }
+        description: 'Upload a new PDF to replace it. Check that it does NOT include your phone number.'
+      - name: resume_text
+        label: 'Résumé link text'
+        type: string
+
+  - name: site
+    label: 'Site settings, song & link preview'
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: now_playing
+        label: 'What I''m listening to (card on the home page)'
+        type: object
+        fields:
+          - name: label
+            label: 'Small heading'
+            type: string
+          - name: song
+            label: 'Song title'
+            type: string
+          - name: artist
+            label: 'Artist'
+            type: string
+          - name: link
+            label: 'Link to the song'
+            type: string
+            description: 'Spotify (or any) link. In Spotify: Share → Copy song link.'
+      - name: title
+        label: 'Browser tab title'
+        type: string
+      - name: description
+        label: 'Search-engine description'
+        type: text
+      - name: share
+        label: 'Link preview (when the site is shared in messages / social media)'
+        type: object
+        description: 'Changes can take a minute or two to appear, and apps like iMessage or Instagram may keep showing the old preview for a while.'
+        fields:
+          - name: title
+            label: 'Preview title'
+            type: string
+          - name: description
+            label: 'Preview text'
+            type: text
+          - name: image
+            label: 'Preview picture'
+            type: image
+            options: { media: images }
+            description: '1200 × 630 px works best.'
+          - name: url
+            label: 'Website address'
+            type: string
+            description: 'Only change this if the site moves to a new address.'
+      - name: footer_home
+        label: 'Footer text on the home page'
+        type: string
+      - name: footer_main
+        label: 'Footer text on the other pages'
+        type: string

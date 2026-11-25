@@ -1,0 +1,24 @@
+# When the "Site settings" (content/site.json) change in the editor, copy the title and share text into index.html
+# so link previews pick them up. Nothing else runs here.
+name: Sync share text
+on:
+  push:
+    branches: [main]
+    paths: ['content/site.json']
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node scripts/sync-meta.js
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet index.html; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Sync share text into index.html"
+            git push
+          fi

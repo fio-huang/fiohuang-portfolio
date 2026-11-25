@@ -1,0 +1,9 @@
+# Netlify deploys this repo as-is: no build step, the site is the files at the top level.
+[build]
+  publish = "."
+
+# Always load the latest text/photos right after an edit is published.
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "no-cache"

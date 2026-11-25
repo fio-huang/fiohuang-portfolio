@@ -1,0 +1,139 @@
+{
+  "subtitle": "What I’ve worked on so far...",
+  "hint": "One project at a time. Pick one from the list. There’s many more to come as well!",
+  "projects": [
+    {
+      "id": "vsa",
+      "name": "UBC VSA Social Media Identity",
+      "category": "Social media & brand identity",
+      "thumb": "/assets/images/works/vsa-logo-thumb.jpg",
+      "thumb_alt": "UBC VSA chrome logo",
+      "meta": "Vice President Graphic Design & Social Media · UBC Vietnamese Student Association · 2026 — present",
+      "description": "Social media graphics and brand visuals I designed for the UBC Vietnamese Student Association’s 2026–2027 year: club fair, recruitment, sponsorship and tier announcements.",
+      "tags": "Social media · Graphic design · Brand identity",
+      "button_label": "Watch the reel on Instagram",
+      "button_link": "https://www.instagram.com/p/DefGT8lvDjn/",
+      "button_file": "",
+      "video": "",
+      "poster": "",
+      "video_alt": "",
+      "images": [
+        {
+          "image": "/assets/images/works/vsa-club-fair.jpg",
+          "alt": "UBC VSA club fair poster: chrome “VSA” lettering, “Club Fair”, Wednesday 23rd, 10:00am to 4:30pm, outside of AMS",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/vsa-hiring-roles.jpg",
+          "alt": "“Xin Chào, we’re hiring” poster listing the open roles in External, Finance, First Year, Event and Marketing, with an application deadline of October 11th",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/vsa-hiring-2026.jpg",
+          "alt": "“Xin Chào, we’re hiring 2026–2027” poster with a faded lotus and a chrome VSA mark, apply by October 11th through the link in bio",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/vsa-logo.jpg",
+          "alt": "Chrome red “VSA” logo with sparkle stars and an orbit ring, on white",
+          "square": true
+        },
+        {
+          "image": "/assets/images/works/vsa-sponsor-obanhmi.jpg",
+          "alt": "“2026–2027 Sponsor” poster announcing OBÁNHMI as an official sponsor of UBC VSA",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/vsa-extended-hiring.jpg",
+          "alt": "“We’ve got time” extended hiring poster with a laptop and a melting clock, applications due Wednesday Oct. 14th at 11:59pm",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/vsa-sponsor-tiers.jpg",
+          "alt": "“Sponsor tiers” poster in mixed chrome and cut-out lettering, inviting viewers to keep swiping",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/vsa-tier-banh-mi-pho.jpg",
+          "alt": "“Bánh Mì/Phở max tier” sponsorship poster with illustrated bánh mì and a bowl of phở",
+          "square": false
+        }
+      ]
+    },
+    {
+      "id": "uv-webcam-particles",
+      "name": "UV Webcam Particles",
+      "category": "TouchDesigner & generative visuals",
+      "thumb": "/assets/images/works/uv-webcam-thumb.jpg",
+      "thumb_alt": "Glowing white particle trail from a TouchDesigner webcam experiment",
+      "meta": "Personal project",
+      "description": "Experimenting with Touch Designer! This project is heavily inspired by @nyltiek. There's definitely a lot more tweaking to do. The file is linked if you want to try it out! Mess around with your nodes to change the particle design :>",
+      "tags": "TouchDesigner · Generative visuals · Experiment",
+      "button_label": "Download the TouchDesigner file (.toe)",
+      "button_link": "",
+      "button_file": "/assets/downloads/uv-webcam-particles.toe",
+      "video": "/assets/video/uv-webcam-particles.mp4",
+      "poster": "/assets/images/works/uv-webcam-poster.jpg",
+      "video_alt": "Screen recording of the TouchDesigner project: a webcam feed with glowing white particles that follow a waving light",
+      "images": []
+    },
+    {
+      "id": "sports-photography",
+      "name": "Sports Photography",
+      "category": "Action & sideline photography",
+      "thumb": "/assets/images/works/sports-thumb.jpg",
+      "thumb_alt": "Two relay runners racing side by side on a track, batons in hand",
+      "meta": "Freelance · Victoria, B.C.",
+      "description": "Action shots from school basketball, soccer and track events, captured from the sideline. I love chasing the split second a play comes together: the jump, the pivot, the ball just leaving a foot.",
+      "tags": "Photography · Sports · Action",
+      "button_label": "",
+      "button_link": "",
+      "button_file": "",
+      "video": "",
+      "poster": "",
+      "video_alt": "",
+      "images": [
+        {
+          "image": "/assets/images/works/sports-01.jpg",
+          "alt": "Two relay runners sprinting side by side on a red track, one in a green singlet and one in black with the number 4, each carrying a baton",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/sports-02.jpg",
+          "alt": "A basketball player in a gray jersey with the number 30 dribbles toward the camera in a wood-panelled gym",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/sports-03.jpg",
+          "alt": "A soccer player in a white jersey and a player in a yellow jersey numbered 22 contest the ball, the yellow player lifting a foot to it",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/sports-04.jpg",
+          "alt": "A basketball guard in a gray jersey numbered 11 crouches low to defend a ball handler in light blue",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/sports-05.jpg",
+          "alt": "A soccer player in a white and blue kit with the number 3 on his back holds the ball overhead for a throw-in, a teammate blurred behind him",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/sports-06.jpg",
+          "alt": "A curly-haired soccer player in a navy shirt dribbles the ball past a white-shirted opponent on a green field",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/sports-07.jpg",
+          "alt": "A soccer player in a white shirt and navy shorts dribbles the ball in front of a goal, with trees and power lines behind",
+          "square": false
+        },
+        {
+          "image": "/assets/images/works/sports-08.jpg",
+          "alt": "A soccer duel between a player in white and a player in a navy shirt numbered 17, in warm low sunlight",
+          "square": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fiona Huang's Portfolio</title>
+  <meta name="theme-color" content="#f7f7f2">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- link preview (iMessage, Instagram, LinkedIn, etc.). If you move the site, update the two URLs below. -->
+  <meta name="description" content="Fiona Huang's digital portfolio: design, photography and creative work.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fiona Huang's Portfolio">
+  <meta property="og:description" content="Design, photography and creative work by Fiona Huang.">
+  <meta property="og:url" content="https://fionahuang.netlify.app/">
+  <meta property="og:image" content="https://fionahuang.netlify.app/assets/images/share-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fionahuang.netlify.app/assets/images/share-preview.jpg">
+  <link rel="preload" href="assets/fonts/BowlbyOne-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/GeneralSans-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preload" href="assets/js/main.js" as="script">
+  <script>
+    /* Intro animation gate: only on the first direct load of #home in a browser session, and never with "reduce motion".
+       It adds class "intro" to <html> (hides the home elements until main.js plays the intro). */
+    (function () {
+      try {
+        var h = location.hash.replace(/^#\/?/, '');
+        var home = h === '' || h === 'home' || h === 'top';
+        var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (home && !calm && !sessionStorage.getItem('fh-intro')) document.documentElement.classList.add('intro');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-view="home" class="no-anim">
+
+  <!-- ============ BACKGROUND DECORATIONS ============
+       Soft, slow-drifting shapes behind everything (decorative only: aria-hidden, no pointer events, CSS-only motion).
+       To remove them completely, delete this whole <div class="bg-deco"> block. Shapes are positioned with --x / --y (percent of the screen). -->
+  <div class="bg-deco" aria-hidden="true">
+    <i class="deco-blob deco-blob--a"></i>
+    <i class="deco-blob deco-blob--b"></i>
+    <svg class="deco deco--ring d1" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="#9aa7ee" stroke-width="2"/><circle cx="32" cy="32" r="19" fill="none" stroke="#b9b4f5" stroke-width="1" opacity=".7"/><circle cx="32" cy="32" r="5" fill="#d9d0fb" stroke="#9aa7ee" stroke-width="1.2"/></svg>
+    <svg class="deco deco--star d2" viewBox="0 0 40 40"><path d="M20 1c1.6 10.2 8.8 17.4 19 19-10.2 1.6-17.4 8.8-19 19-1.6-10.2-8.8-17.4-19-19C11.2 18.4 18.4 11.2 20 1z" fill="#b9b4f5"/></svg>
+    <svg class="deco deco--dot d3" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#d9d0fb"/></svg>
+    <svg class="deco deco--plus d4" viewBox="0 0 30 30"><path d="M15 4v22M4 15h22" fill="none" stroke="#8a7be0" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <svg class="deco deco--squiggle d5" viewBox="0 0 120 30"><path d="M4 18c9-14 17-14 26 0s17 14 26 0 17-14 26 0 17 14 26 0" fill="none" stroke="#c9b8f0" stroke-width="3.2" stroke-linecap="round"/></svg>
+    <svg class="deco deco--star d6" viewBox="0 0 40 40"><path d="M20 1c1.6 10.2 8.8 17.4 19 19-10.2 1.6-17.4 8.8-19 19-1.6-10.2-8.8-17.4-19-19C11.2 18.4 18.4 11.2 20 1z" fill="#8a7be0"/></svg>
+    <svg class="deco deco--ring d7" viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="#9aa7ee" stroke-width="2"/><circle cx="32" cy="32" r="6" fill="#c9b8f0"/></svg>
+    <svg class="deco deco--dot d8" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#a9b8f5"/></svg>
+    <svg class="deco deco--plus d9" viewBox="0 0 30 30"><path d="M15 4v22M4 15h22" fill="none" stroke="#9aa7ee" stroke-width="2.4" stroke-linecap="round"/></svg>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav">
+    <div class="nav__brand">
+      <a class="nav__home" href="#home" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11 12 3.8l8.5 7.2"/><path d="M5.5 9.8V20h4.8v-5.6h3.4V20h4.8V9.8"/></svg></a>
+      <a class="nav__name" href="#home">Fiona Huang</a>
+    </div>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#about" data-route="about">about me</a>
+      <a href="#experience" data-route="experience">experience</a>
+      <a href="#works" data-route="works">my works</a>
+      <a href="#contact" data-route="contact">contact</a>
+    </nav>
+  </header>
+
+  <!-- The site is a set of full-screen "pages". Only one .view is visible at a time;
+       main.js switches between them using the URL hash (#about, #experience, #works, #contact). -->
+  <main id="main">
+
+    <!-- ============ HOME ============ -->
+    <section class="view view--home is-active" id="view-home" data-view="home" aria-label="Home">
+      <div class="home__main">
+        <h1 class="hero__title" tabindex="-1" aria-label="I’m Fiona">
+          <span class="hero__line">I’m<svg class="hero__star" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M20 0c1.9 11.6 8.4 18.1 20 20-11.6 1.9-18.1 8.4-20 20-1.9-11.6-8.4-18.1-20-20C11.6 18.1 18.1 11.6 20 0z"/></svg></span>
+          <span class="hero__line">Fiona<span class="hero__bang" aria-hidden="true">!</span></span>
+        </h1>
+        <div class="hero__row">
+          <div class="hero__text">
+            <p class="hero__status"><span class="hero__dot" aria-hidden="true"></span>Open to summer 2027 internships</p>
+            <p class="hero__intro">A curious, quick-learning student that’s passionate in creative design, human behaviour, and everything problem-solving.</p>
+            <!-- Rotating interests line. Screen readers get the full sentence from .sr-only; the animated bits are aria-hidden.
+                 To change the words: edit the <span class="roller__w"> items (keep the first one class "is-on") and the .sr-only / .interest__static text. -->
+            <p class="hero__interest">
+              <span class="sr-only">I’m interested in marketing, design, UX/UI design, data analysis, computer software, Python, Figma, AI in workspaces, and innovation</span>
+              <span class="interest__lead" aria-hidden="true">I’m interested in . . .</span>
+              <span class="roller" aria-hidden="true">
+                <span class="roller__w is-on">marketing</span>
+                <span class="roller__w">design</span>
+                <span class="roller__w">UX/UI design</span>
+                <span class="roller__w">data analysis</span>
+                <span class="roller__w">computer software</span>
+                <span class="roller__w">Python</span>
+                <span class="roller__w">Figma</span>
+                <span class="roller__w">AI in workspaces</span>
+                <span class="roller__w">innovation</span>
+              </span>
+              <span class="interest__static" aria-hidden="true">marketing, design, UX/UI design, data analysis, computer software, Python, Figma, AI in workspaces, innovation</span>
+            </p>
+            <a class="hero__cta" href="#works" data-route="works">View my work <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ME ============ -->
+    <section class="view view--about" id="view-about" data-view="about" aria-label="About me">
+      <p class="eyebrow">02 / WHO AM I?</p>
+      <h1 class="mega" tabindex="-1">about me</h1>
+      <div class="about__grid">
+        <div class="about__left">
+          <p class="about__text">For me, my work is more than something to look at. I love thinking outside the box, blending innovation with what already works. I design products through a fresh lens to create something new every time.</p>
+
+          <!-- ============ PHOTO FRAMES (album / polaroid style) ============
+               TO ADD YOUR PHOTOS: save them in assets/images/ (e.g. me-1.jpg, me-2.jpg), then inside each
+               <div class="frame__photo"> add ONE line after the placeholder span:
+                 <img src="assets/images/me-1.jpg" alt="Fiona at …">
+               The image fills the frame (object-fit: cover) and automatically hides the "your photo here" mark.
+               Frame 1 is a portrait (3:4) — crop/export about 900x1200. Frame 2 is a landscape (4:3) — about 1200x900 (holds assets/images/commercial-shoot.jpg).
+               Change the caption text under each photo too. Delete a whole <figure class="frame …"> to remove a frame. -->
+          <div class="frames">
+            <figure class="frame frame--portrait">
+              <div class="frame__photo">
+                <span class="frame__ph" aria-hidden="true">your photo here</span>
+                <img src="assets/images/fiona-me.jpg" alt="Fiona in her graduation gown holding flowers" width="900" height="1200" loading="eager" decoding="async">
+              </div>
+              <figcaption>me :)</figcaption>
+            </figure>
+            <figure class="frame frame--landscape">
+              <div class="frame__photo">
+                <span class="frame__ph" aria-hidden="true">your photo here</span>
+                <img src="assets/images/commercial-shoot.jpg" alt="A laptop showing a commercial edit in DaVinci Resolve: two people at a table in the preview and the timeline below" width="1200" height="900" loading="eager" decoding="async">
+              </div>
+              <figcaption>commercial shooting for Mui Ngo Gai !</figcaption>
+            </figure>
+          </div>
+        </div>
+        <!-- Everything in [square brackets] is a placeholder — replace with your real details. -->
+        <ul class="rows rows--facts">
+          <li class="row"><span class="row__tag">Studying</span><span class="row__title">University of British Columbia</span><span class="row__role">Faculty of Arts (interested in cognitive systems + commerce), first-year student</span></li>
+          <li class="row"><span class="row__tag">Based in</span><span class="row__title">Vancouver, British Columbia</span><span class="row__role">Open to new adventures across the globe</span></li>
+          <li class="row"><span class="row__tag">Into</span><span class="row__title">Photography, kendo, travelling, good music . . .</span><span class="row__role">These are a couple of things I can never stop talking about</span></li>
+          <li class="row"><span class="row__tag">Looking for</span><span class="row__title">Summer 2027 internships</span><span class="row__role">Open to any role that challenges me and helps me grow</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="view view--experience" id="view-experience" data-view="experience" aria-label="Experience">
+      <p class="eyebrow">03 / EDUCATION, ROLES &amp; PROJECTS</p>
+      <h1 class="mega" tabindex="-1">experience</h1>
+      <p class="page-sub">What I’m up to now, and where I’ve been lately.</p>
+      <!-- Current roles. Copy a <li class="row"> to add or edit one: tag / title / role / date. -->
+      <ol class="rows rows--exp">
+        <li class="row"><span class="row__tag">Education</span><span class="row__title">University of British Columbia</span><span class="row__role">Faculty of Arts <span class="row__note">(Interested in Cognitive Systems &amp; Commerce)</span>, first-year student</span><span class="row__date">2026 — present</span></li>
+        <li class="row"><span class="row__tag">Role</span><span class="row__title">Vice President Graphic Design &amp; Social Media</span><span class="row__role">UBC Vietnamese Student Association</span><span class="row__date">Sep 2026 — present</span></li>
+        <li class="row"><span class="row__tag">Role</span><span class="row__title">Freelance Photographer</span><span class="row__role">Founder &amp; operator, freelance photography business, Victoria, B.C.</span><span class="row__date">Sep 2024 — present</span></li>
+        <li class="row"><span class="row__tag">Role</span><span class="row__title">Private English Tutor</span><span class="row__role">Cambridge exam prep and debate coaching, Kaohsiung, Taiwan</span><span class="row__date">Jun 2025 — present</span></li>
+      </ol>
+      <!-- Software & skills: auto-scrolling strip. To edit, change the <li>s in BOTH lists (the second list is the looped copy, hidden from screen readers). -->
+      <div class="skills">
+        <p class="skills__label">Software &amp; skills</p>
+        <div class="skills__marquee" role="group" aria-label="Software and skills: Adobe Photoshop, Adobe Premiere Pro, Adobe InDesign, Canva, DaVinci Resolve, TouchDesigner, Excel, Python, Photography, Videography, Social media content, Public speaking, Google AI Essentials, English (native), Mandarin (native), French (professional)">
+          <ul class="skills__track" aria-hidden="true"><li>Adobe Photoshop</li><li>Adobe Premiere Pro</li><li>Adobe InDesign</li><li>Canva</li><li>DaVinci Resolve</li><li>TouchDesigner</li><li>Excel</li><li>Python</li><li>Photography</li><li>Videography</li><li>Social media content</li><li>Public speaking</li><li>Google AI Essentials</li><li>English (native)</li><li>Mandarin (native)</li><li>French (professional)</li></ul>
+          <ul class="skills__track skills__track--dup" aria-hidden="true"><li>Adobe Photoshop</li><li>Adobe Premiere Pro</li><li>Adobe InDesign</li><li>Canva</li><li>DaVinci Resolve</li><li>TouchDesigner</li><li>Excel</li><li>Python</li><li>Photography</li><li>Videography</li><li>Social media content</li><li>Public speaking</li><li>Google AI Essentials</li><li>English (native)</li><li>Mandarin (native)</li><li>French (professional)</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MY WORKS ============ -->
+    <section class="view view--works" id="view-works" data-view="works" aria-label="My works">
+      <h1 class="eyebrow" tabindex="-1">04 / MY WORKS — SELECTED PROJECTS</h1>
+      <p class="page-sub">What I’ve worked on so far...</p>
+      <div class="works">
+        <div class="works__side">
+          <ol class="plist" aria-label="Projects">
+            <li><a href="#works/vsa" data-project-link="vsa"><span class="plist__n">01</span><span class="plist__name plist__name--long">UBC VSA Social Media Identity</span><span class="plist__cat">Social media &amp; brand identity</span><img class="plist__thumb" src="assets/images/works/vsa-logo-thumb.jpg" width="240" height="240" alt="UBC VSA chrome logo" loading="lazy" decoding="async"></a></li>
+            <li><a href="#works/uv-webcam-particles" data-project-link="uv-webcam-particles"><span class="plist__n">02</span><span class="plist__name">UV Webcam Particles</span><span class="plist__cat">TouchDesigner &amp; generative visuals</span><img class="plist__thumb" src="assets/images/works/uv-webcam-thumb.jpg" width="240" height="240" alt="Glowing white particle trail from a TouchDesigner webcam experiment" loading="lazy" decoding="async"></a></li>
+            <li><a href="#works/sports-photography" data-project-link="sports-photography"><span class="plist__n">03</span><span class="plist__name">Sports Photography</span><span class="plist__cat">Action &amp; sideline photography</span><img class="plist__thumb" src="assets/images/works/sports-thumb.jpg" width="240" height="240" alt="Two relay runners racing side by side on a track, batons in hand" loading="lazy" decoding="async"></a></li>
+          </ol>
+          <p class="hint">One project at a time. Pick one from the list. There’s many more to come as well!</p>
+        </div>
+        <div class="works__stage">
+
+        <!-- 01 UBC VSA SOCIAL MEDIA IDENTITY (gallery project: a sideways strip of posters) -->
+        <figure class="project project--gallery is-current" id="vsa" data-project="vsa">
+          <div class="vsa__head">
+            <div class="vsa__text">
+              <p class="vsa__meta">Vice President Graphic Design &amp; Social Media · UBC Vietnamese Student Association · 2026 — present</p>
+              <h2 class="vsa__title">UBC VSA Social Media Identity</h2>
+              <p class="vsa__desc">Social media graphics and brand visuals I designed for the UBC Vietnamese Student Association’s 2026–2027 year: club fair, recruitment, sponsorship and tier announcements.</p>
+              <p class="vsa__tags">Social media · Graphic design · Brand identity</p>
+            </div>
+            <div class="vsa__actions">
+              <a class="btn" href="https://www.instagram.com/p/DefGT8lvDjn/" target="_blank" rel="noopener noreferrer">Watch the reel on Instagram <span aria-hidden="true">↗</span></a>
+              <div class="controls">
+                <button class="arrow" type="button" data-strip="-1" aria-label="Scroll designs left"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4m0 0 5-5m-5 5 5 5" /></svg></button>
+                <button class="arrow" type="button" data-strip="1" aria-label="Scroll designs right"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m0 0-5-5m5 5-5 5" /></svg></button>
+              </div>
+            </div>
+          </div>
+          <ul class="vsa__strip" tabindex="0" aria-label="UBC VSA designs (scroll sideways)">
+            <li class="vsa__item"><img src="assets/images/works/vsa-club-fair.jpg" width="1050" height="1400" alt="UBC VSA club fair poster: chrome “VSA” lettering, “Club Fair”, Wednesday 23rd, 10:00am to 4:30pm, outside of AMS" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/vsa-hiring-roles.jpg" width="1050" height="1400" alt="“Xin Chào, we’re hiring” poster listing the open roles in External, Finance, First Year, Event and Marketing, with an application deadline of October 11th" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/vsa-hiring-2026.jpg" width="1050" height="1400" alt="“Xin Chào, we’re hiring 2026–2027” poster with a faded lotus and a chrome VSA mark, apply by October 11th through the link in bio" decoding="async"></li>
+            <li class="vsa__item vsa__item--sq"><img src="assets/images/works/vsa-logo.jpg" width="1254" height="1254" alt="Chrome red “VSA” logo with sparkle stars and an orbit ring, on white" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/vsa-sponsor-obanhmi.jpg" width="1050" height="1400" alt="“2026–2027 Sponsor” poster announcing OBÁNHMI as an official sponsor of UBC VSA" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/vsa-extended-hiring.jpg" width="1050" height="1400" alt="“We’ve got time” extended hiring poster with a laptop and a melting clock, applications due Wednesday Oct. 14th at 11:59pm" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/vsa-sponsor-tiers.jpg" width="1050" height="1400" alt="“Sponsor tiers” poster in mixed chrome and cut-out lettering, inviting viewers to keep swiping" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/vsa-tier-banh-mi-pho.jpg" width="1050" height="1400" alt="“Bánh Mì/Phở max tier” sponsorship poster with illustrated bánh mì and a bowl of phở" decoding="async"></li>
+          </ul>
+        </figure>
+
+        <!-- 02 UV WEBCAM PARTICLES (video project: a poster-framed video + a downloadable TouchDesigner file) -->
+        <figure class="project project--uv" id="uv-webcam-particles" data-project="uv-webcam-particles">
+          <div class="vsa__head">
+            <div class="vsa__text">
+              <p class="vsa__meta">Personal project</p>
+              <h2 class="vsa__title">UV Webcam Particles</h2>
+              <p class="vsa__desc">Experimenting with Touch Designer! This project is heavily inspired by @nyltiek. There's definitely a lot more tweaking to do. The file is linked if you want to try it out! Mess around with your nodes to change the particle design :&gt;</p>
+              <p class="vsa__tags">TouchDesigner · Generative visuals · Experiment</p>
+            </div>
+            <div class="vsa__actions">
+              <!-- To swap the project file, replace assets/downloads/uv-webcam-particles.toe (keep the name) -->
+              <a class="btn" href="assets/downloads/uv-webcam-particles.toe" download>Download the TouchDesigner file (.toe) <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+          <!-- Click-to-play (no autoplay). Replace assets/video/uv-webcam-particles.mp4 and assets/images/works/uv-webcam-poster.jpg to change it. -->
+          <video class="uv__video" controls playsinline muted loop preload="metadata" poster="assets/images/works/uv-webcam-poster.jpg" width="1280" height="708" aria-label="Screen recording of the TouchDesigner project: a webcam feed with glowing white particles that follow a waving light">
+            <source src="assets/video/uv-webcam-particles.mp4" type="video/mp4">
+            Your browser can’t play this video. <a href="assets/video/uv-webcam-particles.mp4">Open the video file</a>.
+          </video>
+        </figure>
+
+        <!-- 03 SPORTS PHOTOGRAPHY (gallery project: same pattern as 01, a sideways strip of photos) -->
+        <figure class="project project--gallery" id="sports-photography" data-project="sports-photography">
+          <div class="vsa__head">
+            <div class="vsa__text">
+              <p class="vsa__meta">Freelance · Victoria, B.C.</p>
+              <h2 class="vsa__title">Sports Photography</h2>
+              <p class="vsa__desc">Action shots from school basketball, soccer and track events, captured from the sideline. I love chasing the split second a play comes together: the jump, the pivot, the ball just leaving a foot.</p>
+              <p class="vsa__tags">Photography · Sports · Action</p>
+            </div>
+            <div class="vsa__actions">
+              <div class="controls">
+                <button class="arrow" type="button" data-strip="-1" aria-label="Scroll photos left"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4m0 0 5-5m-5 5 5 5" /></svg></button>
+                <button class="arrow" type="button" data-strip="1" aria-label="Scroll photos right"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m0 0-5-5m5 5-5 5" /></svg></button>
+              </div>
+            </div>
+          </div>
+          <ul class="vsa__strip" tabindex="0" aria-label="Sports photos (scroll sideways)">
+            <li class="vsa__item"><img src="assets/images/works/sports-01.jpg" width="1066" height="1600" alt="Two relay runners sprinting side by side on a red track, one in a green singlet and one in black with the number 4, each carrying a baton" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/sports-02.jpg" width="1068" height="1600" alt="A basketball player in a gray jersey with the number 30 dribbles toward the camera in a wood-panelled gym" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/sports-03.jpg" width="1068" height="1600" alt="A soccer player in a white jersey and a player in a yellow jersey numbered 22 contest the ball, the yellow player lifting a foot to it" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/sports-04.jpg" width="1068" height="1600" alt="A basketball guard in a gray jersey numbered 11 crouches low to defend a ball handler in light blue" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/sports-05.jpg" width="1067" height="1600" alt="A soccer player in a white and blue kit with the number 3 on his back holds the ball overhead for a throw-in, a teammate blurred behind him" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/sports-06.jpg" width="1068" height="1600" alt="A curly-haired soccer player in a navy shirt dribbles the ball past a white-shirted opponent on a green field" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/sports-07.jpg" width="1068" height="1600" alt="A soccer player in a white shirt and navy shorts dribbles the ball in front of a goal, with trees and power lines behind" decoding="async"></li>
+            <li class="vsa__item"><img src="assets/images/works/sports-08.jpg" width="1067" height="1600" alt="A soccer duel between a player in white and a player in a navy shirt numbered 17, in warm low sunlight" decoding="async"></li>
+          </ul>
+        </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / LEARN MORE ============ -->
+    <section class="view view--contact" id="view-contact" data-view="contact" aria-label="Contact and learn more">
+      <p class="eyebrow">05 / CONTACT &amp; LEARN MORE</p>
+      <h1 class="mega" tabindex="-1">say hello</h1>
+      <div class="contact__grid">
+        <div>
+          <p class="contact__line">I’d love to hear from you. Say hi, ask about a project, or just talk design.</p>
+          <p class="pill">Open to summer 2027 internships — I’m looking for roles that challenge me.</p>
+        </div>
+        <!-- Replace the [bracketed] text and the href values with your real details. -->
+        <ul class="rows rows--links">
+          <li class="row"><span class="row__tag">Email</span><a class="row__title" href="mailto:fionahuangzc@gmail.com">fionahuangzc@gmail.com</a></li>
+          <li class="row"><span class="row__tag">LinkedIn</span><a class="row__title" href="https://www.linkedin.com/in/fiohuang" target="_blank" rel="noopener noreferrer">linkedin.com/in/fiohuang</a></li>
+          <li class="row"><span class="row__tag">Instagram</span><a class="row__title" href="https://www.instagram.com/ficnahuang/" target="_blank" rel="noopener noreferrer">@ficnahuang</a></li>
+          <li class="row"><span class="row__tag">Résumé</span><a class="row__title" href="assets/fiona-huang-resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        </ul>
+        <a class="hero__cta contact__home" href="#home" data-route="home"><span aria-hidden="true">←</span> Go back home</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ VINYL (half-disc navigation) ============ -->
+  <!-- Five tracks = five pages (home first). Change a track's href/label here. The order of the <li>s and their --i (1–5) set the order on the record;
+       if you add or remove a track, update VIEWS in main.js and the "3" in the .track rotate() formula in style.css (= the middle track). -->
+  <nav class="vinyl-wrap" aria-label="Table of contents">
+    <i class="vinyl-hit" aria-hidden="true"></i>   <!-- stable hover zone (never moves): holds the record pop -->
+    <div class="vinyl-pop">
+    <!-- Rotating text ring just outside the rim (home page only). Decorative: aria-hidden, no pointer events; it lives inside .vinyl-pop so it moves with the hover pop. Edit the words in the <text> below (one phrase; startOffset/textLength set where it sits on the ring and how much arc it covers). -->
+    <svg class="vinyl-ring" viewBox="-60 -60 1120 1120" aria-hidden="true" focusable="false">
+      <defs><path id="ringPath" d="M500 -25 A525 525 0 1 1 499.99 -25"/></defs>
+      <text class="vinyl-ring__text"><textPath href="#ringPath" startOffset="2174" textLength="600" lengthAdjust="spacing">TABLE OF CONTENTS, PICK A TRACK <tspan class="vinyl-ring__arrow">→</tspan></textPath></text>
+    </svg>
+    <div class="vinyl" id="vinyl" title="Table of contents">
+      <!-- .vinyl-disc = the record surface (pink, grooves, sheen, centre label with a small notch). On hover only this layer turns slowly; the labels (.tracks) and the ring text stay still. -->
+      <i class="vinyl-disc" aria-hidden="true"><i class="vinyl__label"></i></i>
+      <ol class="tracks">
+        <li class="track" style="--i:1"><a href="#home" data-route="home"><span class="track__in"><span class="track__num">01</span><span class="track__name">home</span></span></a></li>
+        <li class="track" style="--i:2"><a href="#about" data-route="about"><span class="track__in"><span class="track__num">02</span><span class="track__name">about me</span></span></a></li>
+        <li class="track" style="--i:3"><a href="#experience" data-route="experience"><span class="track__in"><span class="track__num">03</span><span class="track__name">experience</span></span></a></li>
+        <li class="track" style="--i:4"><a href="#works" data-route="works"><span class="track__in"><span class="track__num">04</span><span class="track__name">my works</span></span></a></li>
+        <li class="track" style="--i:5"><a href="#contact" data-route="contact"><span class="track__in"><span class="track__num">05</span><span class="track__name">contact /<br>learn more</span></span></a></li>
+      </ol>
+    </div>
+    </div>
+  </nav>
+
+  <!-- "now playing" card (home only). To change the song, edit the two lines in .np__text and the aria-label. -->
+  <a class="np" href="https://open.spotify.com/track/7gKxCvTDWwV9wBhdeBbr3l" target="_blank" rel="noopener noreferrer" aria-label="What I'm listening to: Nice to Each Other by Olivia Dean, open on Spotify (new tab)">
+    <span class="np__wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+    <span class="np__text" aria-hidden="true">
+      <span class="np__label">what am I listening to?</span>
+      <span class="np__song">Nice to Each Other <span class="np__artist">· Olivia Dean</span></span>
+    </span>
+  </a>
+  <footer class="footer">
+    <!-- Home page only: three small icon links (hidden on the other pages by CSS). Edit the hrefs here. -->
+    <ul class="footer__social" aria-label="Find me online">
+      <li><a href="https://www.linkedin.com/in/fiohuang" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8 10.5v5.5M8 7.6v.1M11.5 16v-5.5M11.5 13c0-1.7 1-2.6 2.4-2.6 1.4 0 2.1.9 2.1 2.5V16"/></svg></a></li>
+      <li><a href="mailto:fionahuangzc@gmail.com" aria-label="Email Fiona" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="3"/><path d="m4.5 8 7.5 5.3L19.5 8"/></svg></a></li>
+      <li><a href="https://www.instagram.com/ficnahuang/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><path d="M16.9 7.1v.1"/></svg></a></li>
+    </ul>
+    <p class="footer__main">Fiona Huang / Digital Portfolio</p>
+    <p class="footer__home">© 2026, Fiona Huang</p>   <!-- shown on the home page instead of the line above -->
+  </footer>
+
+  <!-- The text, links, photos and projects on this page come from the files in /content (edited with Pages CMS, see .pages.yml).
+       content.js fills them in, then starts main.js. If content.js can't run, main.js starts anyway after 3s and the text written in this file is shown. -->
+  <script>
+    (function () {
+      window.fhStarted = false;
+      window.fhStart = function () {
+        if (window.fhStarted) return;
+        window.fhStarted = true;
+        var s = document.createElement('script');
+        s.src = 'assets/js/main.js';
+        document.body.appendChild(s);
+      };
+      var c = document.createElement('script');
+      c.src = 'assets/js/content.js';
+      c.onerror = window.fhStart;
+      document.body.appendChild(c);
+      setTimeout(window.fhStart, 3000);
+    })();
+  </script>
+</body>
+</html>

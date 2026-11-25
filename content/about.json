@@ -1,0 +1,35 @@
+{
+  "text": "For me, my work is more than something to look at. I love thinking outside the box, blending innovation with what already works. I design products through a fresh lens to create something new every time.",
+  "portrait": {
+    "image": "/assets/images/fiona-me.jpg",
+    "alt": "Fiona in her graduation gown holding flowers",
+    "caption": "me :)"
+  },
+  "landscape": {
+    "image": "/assets/images/commercial-shoot.jpg",
+    "alt": "A laptop showing a commercial edit in DaVinci Resolve: two people at a table in the preview and the timeline below",
+    "caption": "commercial shooting for Mui Ngo Gai !"
+  },
+  "facts": [
+    {
+      "label": "Studying",
+      "title": "University of British Columbia",
+      "detail": "Faculty of Arts (interested in cognitive systems + commerce), first-year student"
+    },
+    {
+      "label": "Based in",
+      "title": "Vancouver, British Columbia",
+      "detail": "Open to new adventures across the globe"
+    },
+    {
+      "label": "Into",
+      "title": "Photography, kendo, travelling, good music . . .",
+      "detail": "These are a couple of things I can never stop talking about"
+    },
+    {
+      "label": "Looking for",
+      "title": "Summer 2027 internships",
+      "detail": "Open to any role that challenges me and helps me grow"
+    }
+  ]
+}

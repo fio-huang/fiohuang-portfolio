@@ -13,10 +13,6 @@
       "tags": "Social media · Graphic design · Brand identity",
       "button_label": "Watch the reel on Instagram",
       "button_link": "https://www.instagram.com/p/DefGT8lvDjn/",
-      "button_file": "",
-      "video": "",
-      "poster": "",
-      "video_alt": "",
       "images": [
         {
           "image": "/assets/images/works/vsa-club-fair.jpg",
@@ -70,12 +66,10 @@
       "description": "Experimenting with Touch Designer! This project is heavily inspired by @nyltiek. There's definitely a lot more tweaking to do. The file is linked if you want to try it out! Mess around with your nodes to change the particle design :>",
       "tags": "TouchDesigner · Generative visuals · Experiment",
       "button_label": "Download the TouchDesigner file (.toe)",
-      "button_link": "",
       "button_file": "/assets/downloads/uv-webcam-particles.toe",
       "video": "/assets/video/uv-webcam-particles.mp4",
       "poster": "/assets/images/works/uv-webcam-poster.jpg",
-      "video_alt": "Screen recording of the TouchDesigner project: a webcam feed with glowing white particles that follow a waving light",
-      "images": []
+      "video_alt": "Screen recording of the TouchDesigner project: a webcam feed with glowing white particles that follow a waving light"
     },
     {
       "id": "sports-photography",
@@ -86,12 +80,6 @@
       "meta": "Freelance · Victoria, B.C.",
       "description": "Action shots from school basketball, soccer and track events, captured from the sideline. I love chasing the split second a play comes together: the jump, the pivot, the ball just leaving a foot.",
       "tags": "Photography · Sports · Action",
-      "button_label": "",
-      "button_link": "",
-      "button_file": "",
-      "video": "",
-      "poster": "",
-      "video_alt": "",
       "images": [
         {
           "image": "/assets/images/works/sports-01.jpg",
